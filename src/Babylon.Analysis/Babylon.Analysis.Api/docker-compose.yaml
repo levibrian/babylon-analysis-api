@@ -1,0 +1,4 @@
+﻿services:
+  babylon-analysis-api:
+    ports:
+      - "2550:80"

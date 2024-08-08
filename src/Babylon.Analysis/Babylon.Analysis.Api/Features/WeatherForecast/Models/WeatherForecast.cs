@@ -1,4 +1,4 @@
-namespace Babylon.Analysis.Api.Features.Models;
+namespace Babylon.Analysis.Api.Features.WeatherForecast.Models;
 
 public class WeatherForecast
 {

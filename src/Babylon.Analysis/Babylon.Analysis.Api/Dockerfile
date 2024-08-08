@@ -1,12 +1,21 @@
-﻿FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
+﻿FROM mcr.microsoft.com/dotnet/aspnet:8.0 as base
 WORKDIR /app
+EXPOSE 2550
 
-COPY . ./
-RUN dotnet restore 
+FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
+WORKDIR /src
 
-RUN dotnet publish -c Release -o publish
+COPY ["Babylon.Analysis.Api/Babylon.Analysis.Api.csproj", "Babylon.Analysis.Api/"]
+RUN dotnet restore "Babylon.Analysis.Api/Babylon.Analysis.Api.csproj"
 
-FROM mcr.microsoft.com/dotnet/aspnet:8.0
+COPY . .
+WORKDIR "/src/Babylon.Analysis.Api/"
+RUN dotnet build "Babylon.Analysis.Api.csproj" -c Release -o /app/build
+
+FROM build as publish
+RUN dotnet publish "Babylon.Analysis.Api.csproj" -c Release -o /app/publish /p:UseAppHost=false
+
+FROM base as final
 WORKDIR /app
-COPY --from=build /app/publish .
+COPY --from=publish /app/publish .
 ENTRYPOINT ["dotnet", "Babylon.Analysis.Api.dll"]
