@@ -1,6 +1,6 @@
 ﻿FROM mcr.microsoft.com/dotnet/aspnet:8.0 as base
 WORKDIR /app
-EXPOSE 2550
+EXPOSE 8080
 
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 WORKDIR /src
@@ -18,4 +18,5 @@ RUN dotnet publish "Babylon.Analysis.Api.csproj" -c Release -o /app/publish /p:U
 FROM base as final
 WORKDIR /app
 COPY --from=publish /app/publish .
+
 ENTRYPOINT ["dotnet", "Babylon.Analysis.Api.dll"]

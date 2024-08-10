@@ -1,0 +1,10 @@
+﻿version: '3.5'
+
+services:
+  babylon-analysis-api:
+    image: babylon-analysis-api
+    build:
+      context: .
+      dockerfile: ../src/Babylon.Analysis/Babylon.Analysis.Api/Dockerfile
+    ports:
+      - "8080:8080"
