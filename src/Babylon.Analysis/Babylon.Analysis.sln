@@ -2,6 +2,8 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Babylon.Analysis.Api", "Babylon.Analysis.Api\Babylon.Analysis.Api.csproj", "{0816F01C-CA4C-45E2-88BE-5307D2FB4623}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Babylon.Analysis.Api.Tests", "Babylon.Analysis.Api.Tests\Babylon.Analysis.Api.Tests.csproj", "{88034EFE-A26E-461D-A6C3-C93F5A94E3F0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +14,9 @@ Global
 		{0816F01C-CA4C-45E2-88BE-5307D2FB4623}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0816F01C-CA4C-45E2-88BE-5307D2FB4623}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0816F01C-CA4C-45E2-88BE-5307D2FB4623}.Release|Any CPU.Build.0 = Release|Any CPU
+		{88034EFE-A26E-461D-A6C3-C93F5A94E3F0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{88034EFE-A26E-461D-A6C3-C93F5A94E3F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{88034EFE-A26E-461D-A6C3-C93F5A94E3F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{88034EFE-A26E-461D-A6C3-C93F5A94E3F0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
